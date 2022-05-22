@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>PHPJabbers.com | Free Computer Store Website Template</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static' , filename='bootstrap/css/bootstrap.min.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static' , filename='css/main.css') }}" />
+		<noscript><link rel="stylesheet" href=""{{ url_for('static' , filename='css/noscript.css') }}"" /></noscript>
+		
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header" class="alt">
+					<a href="index.html" class="logo"><strong>Palam</strong> <span>Tech</span></a>
+					<nav>
+						<a href="#menu">Menu</a>
+					</nav>
+				</header>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<ul class="links">
+						
+						<li> <a href="logout">Logout </a> </li>
+		                <li class="active"> <a href="home">Home </a> </li>
+						
+		                <li> <a href="about">About Us</a> </li>
+
+		                <li><a href="contact">Contact Us</a></li>
+
+		                <li class="dropdown">
+		                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">PC Builder</a>
+		                    
+		                    <ul class="dropdown-menu">
+		                        <li> <a href="productself1">Self Build In</a> </li>
+				                <li><a href="question">Recommend For You</a></li>
+		                    </ul>
+                        
+		                </li>
+                        <li><a href="writefeedback">Give Feedback</a></li>
+						<li><a href="myfeedback">My Feedbacks</a></li>
+            		</ul>
+				</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Contact Us</h1>
+									</header>
+									<p>19A, Jalan Niaga Bestari 3, Puncak Alam,
+										42300 Bandar Puncak Alam, Selangor</p>
+										
+									<p>	Contact Number: +60122931909</p>
+										
+										<p>Operating Hours: 10AM - 7PM</p>
+									<div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=palam%20tech&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://putlocker-is.org"></a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net">add a google map to website</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+					<section id="contact">
+						<div class="inner">
+							<section>
+								<header class="major">
+									<h2>Contact us</h2>
+								</header>
+
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="subject">Subject</label>
+											<input type="text" name="subject" id="subject" />
+										</div>
+										<div class="field">
+											<label for="message">Notes</label>
+											<textarea name="message" id="message" rows="6"></textarea>
+										</div>
+
+										<div class="field half text-right">
+											<ul class="actions">
+												<li><input type="submit" value="Send Message" class="primary" /></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+							</section>
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon alt fa-envelope"></span>
+										<h3>Email</h3>
+										<a href="#">contact@company.com</a>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon alt fa-phone"></span>
+										<h3>Phone</h3>
+										<span>+1 333 4040 5566</span>
+										<br>
+										<span>+1 333 5550 3366</span>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon alt fa-home"></span>
+										<h3>Address</h3>
+										<span>212 Barrington Court <br> New York, ABC 10001 <br> United States of America</span>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section>
+
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							
+							<ul class="copyright">
+								<li>Copyright © 2020 Company Name - Template by:</li>
+								<li> <a href="https://www.phpjabbers.com/">PHPJabbers.com</a></li>
+							</ul>
+						</div>
+					</footer>
+
+
+			</div>
+
+		<!-- Scripts -->
+		<script src="{{ url_for('static' , filename='js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static' , filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+		<script src="{{ url_for('static' , filename='js/jquery.scrolly.min.js') }}"></script>
+		<script src="{{ url_for('static' , filename='js/jquery.scrollex.min.js') }}"></script>
+		<script src="{{ url_for('static' , filename='js/browser.min.js') }}"></script>
+		<script src="{{ url_for('static' , filename='js/breakpoints.min.js') }}"></script>
+		<script src="{{ url_for('static' , filename='js/util.js') }}"></script>
+		<script src="{{ url_for('static' , filename='js/main.js') }}"></script>
+
+
+	</body>
+</html>

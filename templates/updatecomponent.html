@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>PHPJabbers.com | Free Computer Store Website Template</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static' , filename='bootstrap/css/bootstrap.min.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static' , filename='css/main.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static' , filename='css/radio.css') }}" />
+
+		<noscript><link rel="stylesheet" href=""{{ url_for('static' , filename='css/noscript.css') }}"" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header" class="alt">
+					<a href="home" class="logo"><strong>Palam Tech</strong> <span>PC Builder</span></a>
+					
+				</header>
+
+				
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<section id="contact">
+                            <div  style="padding-left: 100px; padding-right: 50%">
+                                <section>
+                                    <header class="major">
+                                        <h2>Update Component Details</h2>
+                                    </header>
+    
+                                    <form method="post" action="/updatecomponent/{{component_to_update.compID}}">
+                                        <div >
+                                            <div class="field half">
+                                                <label for="name">Component category</label>
+                                                <select name="catID">
+                                                    {% for row in category %}
+                                                    
+                                                    <option value="{{row.catID}}" {% if row.Selected %}selected="selected"{% endif %}>{{ row.catName }}</option>
+                                                    
+                                                    {% endfor %}
+
+                                                </select>
+                                      
+                                            <br>
+                                                
+                                                <label for="compName">Component Name</label>
+                                                <input type="text" name="compName" id="compName" value="{{component_to_update.compName}}" required />
+                                                <br>
+                                                
+                                                <label for="compBrand">Component Brand</label>
+                                                <input type="text" name="compBrand" id="compBrand"  value="{{component_to_update.compBrand}}" required />   
+                                            
+                                                <br>
+                                            
+                                                <label for="compPrice">Component Price</label>
+                                                <input style="color:black" type="number" step="any" name="compPrice" id="compPrice"  value="{{component_to_update.compPrice}}" required />
+                                                <br>
+                                            <br>
+                                               
+                                                
+                                            <br>
+                     
+                                            <div >
+                                                <br>
+                                                <ul class="actions">
+                                                    <br>
+                                                    <li><input type="submit" value="Update Component" class="primary" /></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </section>
+                                <!-- <section class="split">
+                                    <section>
+                                        <div class="contact-method">
+                                            <span class="icon alt fa-envelope"></span>
+                                            <h3>Email</h3>
+                                            <a href="#">contact@company.com</a>
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <div class="contact-method">
+                                            <span class="icon alt fa-phone"></span>
+                                            <h3>Phone</h3>
+                                            <span>+1 333 4040 5566</span>
+                                            <br>
+                                            <span>+1 333 5550 3366</span>
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <div class="contact-method">
+                                            <span class="icon alt fa-home"></span>
+                                            <h3>Address</h3>
+                                            <span>212 Barrington Court <br> New York, ABC 10001 <br> United States of America</span>
+                                        </div>
+                                    </section>
+                                </section>
+                            </div>
+                        </section> -->
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<ul class="icons">
+							<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>Copyright © 2020 Palam Tech</li>
+							
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+        <script src="{{ url_for('static' , filename='js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static' , filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ url_for('static' , filename='js/jquery.scrolly.min.js') }}"></script>
+        <script src="{{ url_for('static' , filename='js/jquery.scrollex.min.js') }}"></script>
+        <script src="{{ url_for('static' , filename='js/browser.min.js') }}"></script>
+        <script src="{{ url_for('static' , filename='js/breakpoints.min.js') }}"></script>
+        <script src="{{ url_for('static' , filename='js/util.js') }}"></script>
+        <script src="{{ url_for('static' , filename='js/main.js') }}"></script>
+
+	</body>
+</html>

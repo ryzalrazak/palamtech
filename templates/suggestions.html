@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>PHPJabbers.com | Free Computer Store Website Template</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static' , filename='bootstrap/css/bootstrap.min.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static' , filename='css/main.css') }}" />
+		<noscript><link rel="stylesheet" href=""{{ url_for('static' , filename='css/noscript.css') }}"" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header" class="alt">
+					<a href="allcust" class="logo"><strong>Palam Tech</strong> <span>Admin</span></a>
+					<nav>
+						<a href="#menu">Menu</a>
+					</nav>
+				</header>
+
+			<!-- Menu -->
+            <nav id="menu">
+                <ul class="links">
+                    <li > <a href="logout">Logout</a> </li> 
+                    <li  class="active"> <a href="allcust">All Customer</a> </li> 
+                    
+                    <li><a href="rule">Add Rules</a></li>
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Component</a>
+                        
+                        <ul class="dropdown-menu">
+                            <li> <a href="component">List of components</a> </li>
+                            <li> <a href="addcomponent">Add new component</a> </li>
+                            
+                        </ul>
+                    
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Feedback</a>
+                        
+                        <ul class="dropdown-menu">
+                            <li> <a href="feedbacks">All Feedbacks</a> </li>
+                            <li> <a href="complaints">Complaint Feedbacks</a> </li>
+                            <li><a href="suggestions">Suggestion Feedbacks</a></li>
+                            <li><a href="reviews">Review Feedbacks</a></li>
+                        </ul>
+                    
+                    </li>
+
+
+                </ul>
+            </nav>
+
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<section id="contact">
+                            <div class="inner">
+                                <section>
+                                    <header class="major">
+                                        <h2>List of Feedbacks</h2>
+                                    </header>
+                                    <style>
+                                    table, th, td {
+                                        border: 1px solid black;
+                                        border-radius: 10px;
+                                      }
+                                    </style>
+
+                                    <table>
+                                        <th>Feedback ID</th>
+                                        <th>Customer Email</th>
+                                        <th>Feedback Type</th>
+                                        <th>Feedback Date</th>
+                                        <th>Feedback Description</th>
+
+                                    {% for row in suggestions %}
+                                    <tr>
+                                        <td>{{row.fbID}}</td>
+                                        <td>{{row.custEmail}}</td>
+                                        <td>{{row.fbType}}</td>
+                                        <td>{{row.fbDate}}</td>
+                                        <td>{{row.fbDesc}}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </table>     
+                                    
+                                </section>
+                                
+
+			
+
+		<!-- Scripts -->
+        <script src="{{ url_for('static' , filename='js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static' , filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ url_for('static' , filename='js/jquery.scrolly.min.js') }}"></script>
+        <script src="{{ url_for('static' , filename='js/jquery.scrollex.min.js') }}"></script>
+        <script src="{{ url_for('static' , filename='js/browser.min.js') }}"></script>
+        <script src="{{ url_for('static' , filename='js/breakpoints.min.js') }}"></script>
+        <script src="{{ url_for('static' , filename='js/util.js') }}"></script>
+        <script src="{{ url_for('static' , filename='js/main.js') }}"></script>
+
+	</body>
+</html>

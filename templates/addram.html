@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>PHPJabbers.com | Free Computer Store Website Template</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{{ url_for('static' , filename='bootstrap/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/main.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/radio.css') }}" />
+
+    <noscript>
+        <link rel="stylesheet" href="" {{ url_for('static' , filename='css/noscript.css' ) }}"" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header" class="alt">
+            <a href="allcust" class="logo"><strong>Palam Tech</strong> <span>Admin</span></a>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="links">
+                <li> <a href="logout">Logout</a> </li>
+                <li> <a href="allcust">All Customer</a> </li>
+
+
+                <li class="dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false">Component</a>
+
+                    <ul class="dropdown-menu">
+
+                        <li> <a href="addcasing">Casing</a> </li>
+                        <li> <a href="addmb">Motherboard</a> </li>
+                        <li> <a href="addgpu">Graphic Processing Unit (GPU)</a> </li>
+                        <li> <a href="addram">Random Access Memory (RAM)</a> </li>
+                        <li> <a href="addssd">Storage</a> </li>
+                        <li> <a href="addpsu">Power Supply Unit (PSU)</a> </li>
+                        <li> <a href="addcpu">Central Processing Unit (CPU)</a> </li>
+
+                    </ul>
+
+                </li>
+
+
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main" class="alt">
+
+            <section id="contact">
+                <div style="padding-left: 100px; padding-right: 50%">
+                    <section>
+                        <header class="major">
+                            <h2>Add New RAM</h2>
+                        </header>
+
+                        <form method="post" action="addram">
+                            <div>
+
+
+                                <label for="compName">RAM Name</label>
+                                <input type="text" name="name" id="name" required />
+                                <br>
+
+                                <label for="compBrand">RAM Brand</label>
+                                <input type="text" name="brand" id="brand" required />
+
+                                <br>
+
+                                <label for="compPrice">RAM Price</label>
+                                <input style="color:black" type="number" step="any" name="price" id="price" required />
+                                <br>
+                                <br>
+
+                                <br>
+
+                                <div>
+                                    <br>
+                                    <ul class="actions">
+                                        <br>
+                                        <li><input type="submit" value="Add New RAM" class="primary" /></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                    <section id="contact">
+                        <div>
+                            <section>
+                                <header class="major">
+                                    <h2>List of all RAM</h2>
+                                </header>
+                                <style>
+                                    table,
+                                    th,
+                                    td {
+                                        border: 1px solid black;
+                                        border-radius: 10px;
+                                    }
+                                </style>
+
+                                <table>
+                                    <th>RAM ID</th>
+                                    <th>RAM Name</th>
+                                    <th>RAM Brand</th>
+                                    <th>RAM Price</th>
+                                    <th>Action</th>
+
+
+                                    {% for row in ram %}
+                                    <tr>
+                                        <td>{{row.id}}</td>
+                                        <td>{{row.name}}</td>
+                                        <td>{{row.brand}}</td>
+                                        <td>{{row.price}}</td>
+                                        <td><a href="/updateram/{{row.id}}">Update <br> <a
+                                                    href="/deleteram/{{row.id}}">Delete </td>
+                                    </tr>
+                                    {% endfor %}
+                                </table>
+
+                            </section>
+
+                            <!-- Footer -->
+                            <footer id="footer">
+                                <div class="inner">
+                                    <ul class="icons">
+                                        <li><a href="#" class="icon alt fa-twitter"><span
+                                                    class="label">Twitter</span></a></li>
+                                        <li><a href="#" class="icon alt fa-facebook"><span
+                                                    class="label">Facebook</span></a></li>
+                                        <li><a href="#" class="icon alt fa-instagram"><span
+                                                    class="label">Instagram</span></a></li>
+                                        <li><a href="#" class="icon alt fa-linkedin"><span
+                                                    class="label">LinkedIn</span></a></li>
+                                    </ul>
+                                    <ul class="copyright">
+                                        <li>Copyright © 2020 Palam Tech</li>
+
+                                    </ul>
+                                </div>
+                            </footer>
+
+                        </div>
+
+                        <!-- Scripts -->
+                        <script src="{{ url_for('static' , filename='js/jquery.min.js') }}"></script>
+                        <script
+                            src="{{ url_for('static' , filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+                        <script src="{{ url_for('static' , filename='js/jquery.scrolly.min.js') }}"></script>
+                        <script src="{{ url_for('static' , filename='js/jquery.scrollex.min.js') }}"></script>
+                        <script src="{{ url_for('static' , filename='js/browser.min.js') }}"></script>
+                        <script src="{{ url_for('static' , filename='js/breakpoints.min.js') }}"></script>
+                        <script src="{{ url_for('static' , filename='js/util.js') }}"></script>
+                        <script src="{{ url_for('static' , filename='js/main.js') }}"></script>
+
+</body>
+
+</html>

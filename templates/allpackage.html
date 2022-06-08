@@ -63,7 +63,7 @@
                             <div class="inner">
                                 <section>
                                     <header class="major">
-                                        <h2>List of all customer</h2>
+                                        <h2>List of all Packages</h2>
                                     </header>
                                     <style>
                                     table, th, td {
@@ -82,10 +82,10 @@
                                         <th>Central Processing Unit (CPU)</th>
                                         <th>Price (RM)</th>
 
-                                    {% for row in buildpc %}
+                                    {% for row in package %}
                                     
                                     <tr>
-                                        {% price = 0 + casing.compPrice + mb.compPrice %}
+                                        
                                         <td>{{row.casing}}</td>
                                         <td>{{row.mb}}</td>
                                         <td>{{row.gpu}}</td>

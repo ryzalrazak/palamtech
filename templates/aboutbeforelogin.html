@@ -1,89 +1,99 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>PHPJabbers.com | Free Computer Store Website Template</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="{{ url_for('static' , filename='bootstrap/css/bootstrap.min.css') }}" />
-		<link rel="stylesheet" href="{{ url_for('static' , filename='css/main.css') }}" />
-		<noscript><link rel="stylesheet" href=""{{ url_for('static' , filename='css/noscript.css') }}"" /></noscript>
-		
-	</head>
-	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<head>
+	<title>PHPJabbers.com | Free Computer Store Website Template</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="{{ url_for('static' , filename='bootstrap/css/bootstrap.min.css') }}" />
+	<link rel="stylesheet" href="{{ url_for('static' , filename='css/main.css') }}" />
+	<noscript>
+		<link rel="stylesheet" href="" {{ url_for('static' , filename='css/noscript.css' ) }}"" />
+	</noscript>
 
-				<!-- Header -->
-				<header id="header" class="alt">
-					<a href="home" class="logo"><strong>Palam Tech</strong> <span>PC Builder</span></a>
-					<nav>
-						<a href="#menu">Menu</a>
-					</nav>
-				</header>
+</head>
 
-				<!-- Menu -->
-                <nav id="menu">
-                    <ul class="links">
-                        <li class="dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
-                            
-                            <ul class="dropdown-menu">
-                                <li> <a href="login">Customer Login</a> </li>
-                                <li><a href="loginAdmin">Admin Login</a></li>
-                                
-                            </ul>
-                        </li>
-                        <li><a href="home">Home</a></li>
-                        <li><a href="aboutbeforelogin">About Us</a></li>
-                        <li><a href="contactbeforelogin">Contact Us</a></li>
-                            
-                    </ul>
-                </nav>
+<body class="is-preload">
 
-				<!-- Main -->
-					<div id="main" class="alt">
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-						<!-- One -->
-							<section id="one">
-								<div class="inner">
-									<header class="major">
-										<h1>About Us</h1>
-									</header>
-									<span class="image main"><img src="images/aboutus.jpg" alt="" /></span>
-									<p>Palam Technology is a company that provides computer building, repairing, and maintaining services and is located at Puncak Alam, Selangor. Palam Tech was established by two people, Mr. Hafirul, the manager and Mr. Amir is the director of Palam Tech. The company launched its operation on 9th October 2020. Palam Tech has a really good team handling the company which provides best services with affordable prices.</p>
-								</div>
-							</section>
+		<!-- Header -->
+		<header id="header" class="alt">
+			<a href="indexdefault" class="logo"><strong>Palam Tech</strong> <span>PC Builder</span></a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
 
-					</div>
+		<!-- Menu -->
+		<nav id="menu">
+			<ul class="links">
+				<li class="dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+						aria-haspopup="true" aria-expanded="false">Login</a>
 
-				<!-- Footer -->
-				<footer id="footer">
-					<div class="inner">
-						<ul class="icons">
-							<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						</ul>
-						<ul class="copyright">
-							<li>Copyright © 2020 Company Name - Template by:</li>
-							<li> <a href="https://www.phpjabbers.com/">PHPJabbers.com</a></li>
-						</ul>
-					</div>
-				</footer>
+					<ul class="dropdown-menu">
+						<li> <a href="login">Customer Login</a> </li>
+						<li><a href="loginAdmin">Admin Login</a></li>
 
+					</ul>
+				</li>
+				<li><a href="indexdefault">Home</a></li>
+				<li><a href="aboutbeforelogin">About Us</a></li>
+				<li><a href="contactbeforelogin">Contact Us</a></li>
+
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main" class="alt">
+
+			<!-- One -->
+			<section id="one">
+				<div class="inner">
+					<header class="major">
+						<h1>About Us</h1>
+					</header>
+					<span class="image main"><img src="images/aboutus.jpg" alt="" /></span>
+					<p>Palam Technology is a company that provides computer building, repairing, and maintaining
+						services and is located at Puncak Alam, Selangor. Palam Tech was established by two people, Mr.
+						Hafirul, the manager and Mr. Amir is the director of Palam Tech. The company launched its
+						operation on 9th October 2020. Palam Tech has a really good team handling the company which
+						provides best services with affordable prices.</p>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<ul class="icons">
+					<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>Copyright © 2020 Palam Tech </li>
+					
+				</ul>
 			</div>
+		</footer>
 
-		<!-- Scripts -->
-		<script src="{{ url_for('static' , filename='js/jquery.min.js') }}"></script>
-		<script src="{{ url_for('static' , filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-		<script src="{{ url_for('static' , filename='js/jquery.scrolly.min.js') }}"></script>
-		<script src="{{ url_for('static' , filename='js/jquery.scrollex.min.js') }}"></script>
-		<script src="{{ url_for('static' , filename='js/browser.min.js') }}"></script>
-		<script src="{{ url_for('static' , filename='js/breakpoints.min.js') }}"></script>
-		<script src="{{ url_for('static' , filename='js/util.js') }}"></script>
-		<script src="{{ url_for('static' , filename='js/main.js') }}"></script>
+	</div>
 
-	</body>
+	<!-- Scripts -->
+	<script src="{{ url_for('static' , filename='js/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static' , filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+	<script src="{{ url_for('static' , filename='js/jquery.scrolly.min.js') }}"></script>
+	<script src="{{ url_for('static' , filename='js/jquery.scrollex.min.js') }}"></script>
+	<script src="{{ url_for('static' , filename='js/browser.min.js') }}"></script>
+	<script src="{{ url_for('static' , filename='js/breakpoints.min.js') }}"></script>
+	<script src="{{ url_for('static' , filename='js/util.js') }}"></script>
+	<script src="{{ url_for('static' , filename='js/main.js') }}"></script>
+
+</body>
+
 </html>

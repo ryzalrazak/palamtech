@@ -1,108 +1,121 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>PHPJabbers.com | Free Computer Store Website Template</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="{{ url_for('static' , filename='bootstrap/css/bootstrap.min.css') }}" />
-		<link rel="stylesheet" href="{{ url_for('static' , filename='css/main.css') }}" />
-        <link rel="stylesheet" href="{{ url_for('static' , filename='css/radio.css') }}" />
 
-		<noscript><link rel="stylesheet" href=""{{ url_for('static' , filename='css/noscript.css') }}"" /></noscript>
-	</head>
-	<body class="is-preload">
+<head>
+	<title>PHPJabbers.com | Free Computer Store Website Template</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="{{ url_for('static' , filename='bootstrap/css/bootstrap.min.css') }}" />
+	<link rel="stylesheet" href="{{ url_for('static' , filename='css/main.css') }}" />
+	<link rel="stylesheet" href="{{ url_for('static' , filename='css/radio.css') }}" />
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+	<noscript>
+		<link rel="stylesheet" href="" {{ url_for('static' , filename='css/noscript.css' ) }}"" />
+	</noscript>
+</head>
 
-				<!-- Header -->
-				<header id="header" class="alt">
-					<a href="home" class="logo"><strong>Palam Tech</strong> <span>PC Builder</span></a>
-					<nav>
-						<a href="#menu">Menu</a>
-					</nav>
-				</header>
+<body class="is-preload">
 
-				<!-- Menu -->
-				<nav id="menu">
-					<ul class="links">
-						
-						<li> <a href="logout">Logout </a> </li>
-		                <li class="active"> <a href="home">Home </a> </li>
-						
-		                <li> <a href="about">About Us</a> </li>
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-		                <li><a href="contact">Contact Us</a></li>
+		<!-- Header -->
+		<header id="header" class="alt">
+			<a href="home" class="logo"><strong>Palam Tech</strong> <span>PC Builder</span></a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
 
-		                <li class="dropdown">
-		                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">PC Builder</a>
-		                    
-		                    <ul class="dropdown-menu">
-		                        <li> <a href="productself1">Self Build In</a> </li>
-				                <li><a href="question">Recommend For You</a></li>
-		                    </ul>
-                        
-		                </li>
-                        <li><a href="writefeedback">Give Feedback</a></li>
-						<li><a href="myfeedback">My Feedbacks</a></li>
-            		</ul>
-				</nav>
+		<!-- Menu -->
+		<nav id="menu">
+			<ul class="links">
 
+				<li> <a href="logout">Logout </a> </li>
+				<li class="active"> <a href="home">Home </a> </li>
 
+				<li> <a href="about">About Us</a> </li>
 
-				<!-- Main -->
-					<div id="main" class="alt">
+				<li><a href="contact">Contact Us</a></li>
 
-						<section id="contact">
-                            <div class="inner">
-                                <section>
-                                    <header class="major">
-                                        <h2>Question For Recommending For You</h2>
-                                    </header>
-    
-                                    <form method="post" action="#">
-                                        <div class="fields">
-                                            <div class="field half">
-                                                <label for="name">What are the reason you want to build a PC?</label>
-                                                <input type="checkbox" name="reason" /> Gaming <br>
-                                                <input type="checkbox" name="reason" /> Streaming<br>
-                                                <input type="checkbox" name="reason" /> Editing <br>
-                                                <input type="checkbox" name="reason" /> Office Use
-                                            </div>
-                                            <div class="field half">
-                                                <label for="name">Do you have any color preference? Pick the color</label>
-                                                <input type="radio" name="color" /> Don't mind <br>
-                                                <input type="radio" name="color" /> Black<br>
-                                                <input type="radio" name="color" /> White <br>
-                                                <input type="radio" name="color" /> Pink
-                                            </div>
-                                            <div class="field half">
-                                                <label for="name">What are you expected from the PC's performance?</label>
-                                                <input type="checkbox" name="performance" /> Large in memory storage <br>
-                                                <input type="checkbox" name="performance" /> Fast rendering performance<br>
-                                                <input type="checkbox" name="performance" /> Smooth gaming experience <br>
-                                                <input type="checkbox" name="performance" /> Best cooling system
-                                            </div>
-                                            <div class="field half">
-                                                <label for="name">What are the expected price of the PC?</label>
-                                                <input type="radio" name="price" /> Don't mind <br>
-                                                <input type="radio" name="price" /> Less than RM3000<br>
-                                                <input type="radio" name="price" /> RM3000 to RM5000 <br>
-                                                <input type="radio" name="price" /> Above RM5000
-                                            </div>
-                                           
+				<li class="dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+						aria-haspopup="true" aria-expanded="false">PC Builder</a>
+
+					<ul class="dropdown-menu">
+						<li><a href="question">Recommend For You</a></li>
+					</ul>
+
+				</li>
+				<li><a href="writefeedback">Give Feedback</a></li>
+				<li><a href="myfeedback">My Feedbacks</a></li>
+			</ul>
+		</nav>
 
 
-                                            
-    
-                                            <div class="field half text-right">
-                                                <ul class="actions">
-                                                    <li><input type="submit" value="Recommend Now" class="primary" /></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </section>
+
+		<!-- Main -->
+		<div id="main" class="alt">
+
+			<section id="contact">
+				<div class="inner">
+					<section>
+						<header class="major">
+							<h2>Question For Recommending For You</h2>
+						</header>
+
+						<form method="post" action="#">
+							<div class="fields">
+								<div class="field half">
+									<label for="name">What are the expected price of the PC?</label>
+									<input type="radio" name="price" /> Don't mind <br>
+									<input type="radio" name="price" /> Less than RM3000<br>
+									<input type="radio" name="price" /> RM3000 to RM5000 <br>
+									<input type="radio" name="price" /> Above RM5000
+								</div>
+								<div class="field half">
+									<label for="name">Do you have brand preference for your CPU? If yes, pick
+										one.</label>
+									<input type="radio" name="reason" /> Don't mind <br>
+									<input type="radio" name="reason" /> AMD<br>
+									<input type="radio" name="reason" /> INTEL <br>
+								</div>
+
+
+								<div class="field half">
+									<label for="name">What are the reason you want to build a PC?</label>
+									<input type="checkbox" name="reason" /> Gaming <br>
+									<input type="checkbox" name="reason" /> Streaming<br>
+									<input type="checkbox" name="reason" /> Editing <br>
+									<input type="checkbox" name="reason" /> Office Use
+								</div>
+								<div class="field half">
+									<label for="name">Do you have any color preference for PC's casing? Pick the
+										color</label>
+									<input type="radio" name="color" /> Don't mind <br>
+									<input type="radio" name="color" /> Black<br>
+									<input type="radio" name="color" /> White <br>
+
+								</div>
+								<div class="field half">
+									<label for="name">What are you expected from the PC's performance?</label>
+									<input type="checkbox" name="performance" /> Large in memory storage <br>
+									<input type="checkbox" name="performance" /> Fast rendering performance<br>
+									<input type="checkbox" name="performance" /> Smooth gaming experience <br>
+
+								</div>
+
+								<div class="field half">
+									<ul class="actions">
+										<li><input type="submit" value="Recommend Now" class="primary" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</section>
+
+
+				</div>
 				<footer id="footer">
 					<div class="inner">
 						<ul class="icons">
@@ -113,22 +126,21 @@
 						</ul>
 						<ul class="copyright">
 							<li>Copyright © 2020 Palam Tech</li>
-							
+
 						</ul>
 					</div>
 				</footer>
-
-			</div>
-
+		</div>
 		<!-- Scripts -->
-        <script src="{{ url_for('static' , filename='js/jquery.min.js') }}"></script>
-        <script src="{{ url_for('static' , filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-        <script src="{{ url_for('static' , filename='js/jquery.scrolly.min.js') }}"></script>
-        <script src="{{ url_for('static' , filename='js/jquery.scrollex.min.js') }}"></script>
-        <script src="{{ url_for('static' , filename='js/browser.min.js') }}"></script>
-        <script src="{{ url_for('static' , filename='js/breakpoints.min.js') }}"></script>
-        <script src="{{ url_for('static' , filename='js/util.js') }}"></script>
-        <script src="{{ url_for('static' , filename='js/main.js') }}"></script>
+		<script src="{{ url_for('static' , filename='js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static' , filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+		<script src="{{ url_for('static' , filename='js/jquery.scrolly.min.js') }}"></script>
+		<script src="{{ url_for('static' , filename='js/jquery.scrollex.min.js') }}"></script>
+		<script src="{{ url_for('static' , filename='js/browser.min.js') }}"></script>
+		<script src="{{ url_for('static' , filename='js/breakpoints.min.js') }}"></script>
+		<script src="{{ url_for('static' , filename='js/util.js') }}"></script>
+		<script src="{{ url_for('static' , filename='js/main.js') }}"></script>
 
-	</body>
+</body>
+
 </html>

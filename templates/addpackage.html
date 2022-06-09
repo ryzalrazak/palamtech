@@ -61,7 +61,7 @@
 
 						<section id="contact">
                             <div  style="padding-left: 100px; padding-right: 50%">
-                                <section>
+                               
                                     <header class="major">
                                         <h2>Add New PC Package</h2>
                                     </header>
@@ -71,7 +71,7 @@
                                             <div class="field half">
                                                 <label for="casing">Casing</label>
                                                 
-                                                <select name="casing" id="casing">
+                                                <select name="casing" id="pc">
                                                 {% for row in casing %}
                                                     <option value="{{row.id}}">{{row.name}}</option>
                                                     {% endfor %}
@@ -81,7 +81,7 @@
                                             
                                                 <label for="mobo">Motherboard</label>
                                                
-                                                <select name="mb" id="mb">
+                                                <select name="mb" id="pc">
                                                 {% for row in mobo %}
                                                     <option value="{{row.id}}">{{row.name}}</option>
                                                     {% endfor %}
@@ -91,7 +91,7 @@
                                             
                                                <label for="gpu">Graphic Processing Unit (GPU)</label>
                                                
-                                                <select name="gpu" id="gpu">
+                                                <select name="gpu" id="pc">
                                                 {% for row in gpu %}
                                                     <option value="{{row.id}}">{{row.name}}</option>
                                                     {% endfor %}
@@ -100,7 +100,7 @@
                                             <br>
                                                 <label for="ram">Random Access Memory (RAM)</label>
                                                 
-                                                <select name="ram" id="ram">
+                                                <select name="ram" id="pc">
                                                 {% for row in ram %}
                                                     <option value="{{row.id}}">{{row.name}}</option>
                                                     {% endfor %}
@@ -109,7 +109,7 @@
                                             <br>
                                                 <label for="storage">Storage</label>
                                                 
-                                                <select name="ssd" id="ssd">
+                                                <select name="ssd" id="pc">
                                                 {% for row in storage %}
                                                     <option value="{{row.id}}">{{row.name}}</option>
                                                     {% endfor %}
@@ -118,7 +118,7 @@
                                             <br>
                                                 <label for="psu">Power Supply Unit (PSU)</label>
                                                
-                                                <select name="psu" id="psu">
+                                                <select name="psu" id="pc">
                                                 {% for row in psu %}
                                                     <option value="{{row.id}}">{{row.name}}</option>
                                                     {% endfor %}
@@ -127,7 +127,7 @@
                                             <br>
                                                 <label for="cpu">Central Processing Unit (CPU)</label>
                                                
-                                                <select name="cpu" id="cpu">
+                                                <select name="cpu" id="pc">
                                                 {% for row in cpu %}
                                                     <option value="{{row.id}}">{{row.name}}</option>
                                                     {% endfor %}
@@ -146,6 +146,51 @@
                                         </div>
                                     </form>
                                 </section>
+                                  <section>
+                                    <div class="inner">
+                                      
+                                            <header class="major">
+                                                <h2>List of all Packages</h2>
+                                            </header>
+                                            <style>
+                                            table, th, td {
+                                                border: 1px solid black;
+                                                border-radius: 10px;
+                                              }
+                                            </style>
+        
+                                            <table style="font-size:18px;">
+                                                <th>ID</th>
+                                                <th>Casing</th>
+                                                <th>Motherboard</th>
+                                                <th>Graphic Processing Unit (GPU)</th>
+                                                <th>Random Access Memory (RAM)</th>
+                                                <th>Storage</th>
+                                                <th>Power Supply Unit (PSU)</th>
+                                                <th>Central Processing Unit (CPU)</th>
+                                                <th>Price (RM)</th>
+                                                <th>Action</th>
+        
+                                            {% for row in package %}
+                                            
+                                            <tr>
+                                                <td>{{row.id}}</td>
+                                                <td>{{row.1}}</td>
+                                                <td>{{row.2}}</td>
+                                                <td>{{row.3}}</td>
+                                                <td>{{row.4}}</td>
+                                                <td>{{row.5}}</td>
+                                                <td>{{row.6}}</td>
+                                                <td>{{row.7}}</td>
+                                                <td>{{row.8}}</td>
+                                                <td><a href="/updatepackage/{{row.id}}">Update <br> <a
+                                                    href="/deletepackage/{{row.id}}">Delete </td>
+                                                
+                                            </tr>
+                                            {% endfor %}
+                                        </table>  
+                                            
+                                        </section>
                                 <!-- <section class="split">
                                     <section>
                                         <div class="contact-method">

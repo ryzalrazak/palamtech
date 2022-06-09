@@ -85,21 +85,21 @@ class Feedbacks(db.Model):
         self.fbDesc = fbDesc
 
 
-class Component(db.Model):
-    component = "children"
-    compID = db.Column(db.Integer, primary_key=True)
-    catID = db.Column(db.Integer, db.ForeignKey('category.catID'),
-                      nullable=False)
-    compName = db.Column(db.String(255))
-    compBrand = db.Column(db.String(255))
-    compPrice = db.Column(db.Float())
+# class Component(db.Model):
+#     component = "children"
+#     compID = db.Column(db.Integer, primary_key=True)
+#     catID = db.Column(db.Integer, db.ForeignKey('category.catID'),
+#                       nullable=False)
+#     compName = db.Column(db.String(255))
+#     compBrand = db.Column(db.String(255))
+#     compPrice = db.Column(db.Float())
 
-    def __init__(self, catID, compName, compBrand, compPrice):
+#     def __init__(self, catID, compName, compBrand, compPrice):
 
-        self.catID = catID
-        self.compName = compName
-        self.compBrand = compBrand
-        self.compPrice = compPrice
+#         self.catID = catID
+#         self.compName = compName
+#         self.compBrand = compBrand
+#         self.compPrice = compPrice
 
 
 class Casing(db.Model):
@@ -238,6 +238,9 @@ class Pcpackage(db.Model):
 def index():
     return render_template('index.html', message="WELCOME TO PALAMTECH PC BUILDER")
 
+@app.route('/indexdefault')
+def indexdefault():
+    return render_template('index.html', message="WELCOME TO PALAMTECH PC BUILDER")
 
 @app.route('/home')
 def home():
@@ -368,11 +371,6 @@ def allcust():
     all_data = Customer.query.all()
     return render_template("allcust.html", customer=all_data)
 
-
-# @app.route('/allpackage')
-# def allpackage():
-#     result = db.engine.execute("SELECT pcpackage.id, casing.name "Casing", mb.name "Motherboard",gpu.name"GPU",ram.name"RAM",ssd.name"Storage",psu.name"PSU",cpu.name"CPU",casing.price+mb.price+gpu.price+ram.price+ssd.price+psu.price+cpu.price AS "Price" FROM pcpackage JOIN casing ON (pcpackage.casing=casing.id) JOIN mb ON (pcpackage.mb=mb.id) JOIN gpu ON (pcpackage.gpu = gpu.id) JOIN ram ON (pcpackage.ram=ram.id) JOIN ssd ON (pcpackage.ssd=ssd.id) JOIN psu ON (pcpackage.psu=psu.id) JOIN cpu ON (pcpackage.cpu=cpu.id)")
-#     return render_template("allpackage.html", package=result)
 
 
 @app.route('/feedbacks')
@@ -547,22 +545,24 @@ def addcpu():
 
 @app.route('/addpackage', methods=['POST', 'GET'])
 def addpackage():
-    rcasing = db.engine.execute("SELECT id, name FROM casing")
-    rmobo = db.engine.execute("SELECT id, name FROM mb")
-    rgpu = db.engine.execute("SELECT id, name FROM gpu")
-    rram = db.engine.execute("SELECT id, name FROM ram")
-    rstorage = db.engine.execute("SELECT id, name FROM ssd")
-    rpsu = db.engine.execute("SELECT id, name FROM psu")
-    rcpu = db.engine.execute("SELECT id, name FROM cpu")
+    rcasing = db.engine.execute("SELECT id, name FROM casing ORDER BY name")
+    rmobo = db.engine.execute("SELECT id, name FROM mb ORDER BY name")
+    rgpu = db.engine.execute("SELECT id, name FROM gpu ORDER BY name")
+    rram = db.engine.execute("SELECT id, name FROM ram ORDER BY name")
+    rstorage = db.engine.execute("SELECT id, name FROM ssd ORDER BY name")
+    rpsu = db.engine.execute("SELECT id, name FROM psu ORDER BY name")
+    rcpu = db.engine.execute("SELECT id, name FROM cpu ORDER BY name")
+    result = db.engine.execute("SELECT pcpackage.id, casing.name, mb.name,gpu.name,ram.name,ssd.name,psu.name,cpu.name,(casing.price+mb.price+gpu.price+ram.price+ssd.price+psu.price+cpu.price) FROM pcpackage JOIN casing ON (pcpackage.casing=casing.id) JOIN mb ON (pcpackage.mb=mb.id) JOIN gpu ON (pcpackage.gpu = gpu.id) JOIN ram ON (pcpackage.ram=ram.id) JOIN ssd ON (pcpackage.ssd=ssd.id) JOIN psu ON (pcpackage.psu=psu.id) JOIN cpu ON (pcpackage.cpu=cpu.id) ORDER BY id DESC")
+
     if request.method == 'POST':
 
         db.session.add(Pcpackage(casing=request.form['casing'], mb=request.form['mb'], gpu=request.form['gpu'],
                        ram=request.form['ram'], ssd=request.form['ssd'], psu=request.form['psu'], cpu=request.form['cpu']))
         db.session.commit()
-        return redirect('/allcust')
+        return redirect('/addpackage')
 
     else:
-        return render_template('addpackage.html', casing=rcasing, mobo=rmobo, gpu=rgpu, ram=rram, storage=rstorage, psu=rpsu, cpu=rcpu)
+        return render_template('addpackage.html', casing=rcasing, mobo=rmobo, gpu=rgpu, ram=rram, storage=rstorage, psu=rpsu, cpu=rcpu, package = result)
 
 
 @app.route('/updatecasing/<int:id>', methods=['GET', 'POST'])
@@ -687,6 +687,32 @@ def updatecpu(id):
 
 #     return render_template('updatecomponent.html',component_to_update=component_to_update, category=all_data)
 
+@app.route('/updatepackage/<int:id>',methods = ['GET','POST'])
+def updatepackage(id):
+    #category = Category.query.filter_by(catID=catID).first()
+    all_data = Pcpackage.query.all()
+    component_to_update = Pcpackage.query.filter_by(id=id).first()
+    rcasing = db.engine.execute("SELECT id, name FROM casing")
+    rmb = db.engine.execute("SELECT id, name FROM mb")
+    rgpu = db.engine.execute("SELECT id, name FROM gpu")
+    rram = db.engine.execute("SELECT id, name FROM ram")
+    rssd = db.engine.execute("SELECT id, name FROM ssd")
+    rpsu = db.engine.execute("SELECT id, name FROM psu")
+    rcpu = db.engine.execute("SELECT id, name FROM cpu")
+    if request.method == 'POST':
+        component_to_update.casing = request.form['casing']
+        component_to_update.mb = request.form['mb']
+        component_to_update.gpu = request.form['gpu']
+        component_to_update.ram = request.form['ram']
+        component_to_update.ssd = request.form['ssd']
+        component_to_update.psu = request.form['psu']
+        component_to_update.cpu = request.form['cpu']
+        component_to_update.component = Pcpackage(casing =component_to_update.casing ,mb=component_to_update.mb, gpu=component_to_update.gpu, ram = component_to_update.ram, ssd = component_to_update.ssd, psu = component_to_update.psu, cpu = component_to_update.cpu)
+
+        db.session.commit()
+        return redirect('/addpackage')
+    return render_template('updatepackage.html',component_to_update=component_to_update, package=all_data,casing=rcasing, mb=rmb, gpu=rgpu, ram=rram, ssd=rssd, psu=rpsu, cpu=rcpu)
+
 
 @app.route('/updatefeedback/<int:fbID>', methods=['GET', 'POST'])
 def updatefeedback(fbID):
@@ -718,6 +744,17 @@ def updatefeedback(fbID):
 #         return redirect('/component')
 #     except:
 #         return "There was a problem deleting the component"
+
+@app.route('/deletepackage/<int:id>')
+def deletepackage(id):
+    component_to_delete = Pcpackage.query.get_or_404(id)
+
+    try:
+        db.session.delete(component_to_delete)
+        db.session.commit()
+        return redirect('/addpackage')
+    except:
+        return "There was a problem deleting the component"
 
 @app.route('/deletecasing/<int:id>')
 def deletecasing(id):

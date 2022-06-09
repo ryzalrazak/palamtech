@@ -73,6 +73,7 @@
                                     </style>
 
                                     <table>
+                                        <th>ID</th>
                                         <th>Casing</th>
                                         <th>Motherboard</th>
                                         <th>Graphic Processing Unit (GPU)</th>
@@ -81,19 +82,22 @@
                                         <th>Power Supply Unit (PSU)</th>
                                         <th>Central Processing Unit (CPU)</th>
                                         <th>Price (RM)</th>
+                                        <th>Action</th>
 
                                     {% for row in package %}
                                     
                                     <tr>
-                                        
-                                        <td>{{row.casing}}</td>
-                                        <td>{{row.mb}}</td>
-                                        <td>{{row.gpu}}</td>
-                                        <td>{{row.ram}}</td>
-                                        <td>{{row.storage}}</td>
-                                        <td>{{row.psu}}</td>
-                                        <td>{{row.cpu}}</td>
-                                        <td>{{price}}</td>
+                                        <td>{{row.id}}</td>
+                                        <td>{{row.1}}</td>
+                                        <td>{{row.2}}</td>
+                                        <td>{{row.3}}</td>
+                                        <td>{{row.4}}</td>
+                                        <td>{{row.5}}</td>
+                                        <td>{{row.6}}</td>
+                                        <td>{{row.7}}</td>
+                                        <td>{{row.8}}</td>
+                                        <td><a href="/updateram/{{row.id}}">Update <br> <a
+                                            href="/deletepackage/{{row.id}}">Delete </td>
                                         
                                     </tr>
                                     {% endfor %}

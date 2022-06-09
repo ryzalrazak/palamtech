@@ -1,228 +1,168 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>PHPJabbers.com | Free Computer Store Website Template</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="{{ url_for('static' , filename='bootstrap/css/bootstrap.min.css') }}" />
-		<link rel="stylesheet" href="{{ url_for('static' , filename='css/main.css') }}" />
-		<noscript><link rel="stylesheet" href=""{{ url_for('static' , filename='css/noscript.css') }}"" /></noscript>
-		
-	</head>
+
+<head>
+	<title>PHPJabbers.com | Free Computer Store Website Template</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="{{ url_for('static' , filename='bootstrap/css/bootstrap.min.css') }}" />
+	<link rel="stylesheet" href="{{ url_for('static' , filename='css/main.css') }}" />
+	<noscript>
+		<link rel="stylesheet" href="" {{ url_for('static' , filename='css/noscript.css' ) }}"" />
+	</noscript>
+
+</head>
 
 
-	<body class="is-preload">
+<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-				<!-- Header -->
-				<header id="header" class="alt">
-					<a href="home" class="logo"><strong>Palam Tech</strong> <span>PC Builder</span></a>
-					<nav>
-						<a href="#menu">Menu</a>
-					</nav>
+		<!-- Header -->
+		<header id="header" class="alt">
+			<a href="home" class="logo"><strong>Palam Tech</strong> <span>PC Builder</span></a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<ul class="links">
+
+				<li> <a href="logout">Logout </a> </li>
+				<li class="active"> <a href="home">Home </a> </li>
+
+				<li> <a href="about">About Us</a> </li>
+
+				<li><a href="contact">Contact Us</a></li>
+
+				<li class="dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+						aria-haspopup="true" aria-expanded="false">PC Builder</a>
+
+					<ul class="dropdown-menu">
+						<li><a href="question">Recommend For You</a></li>
+					</ul>
+
+				</li>
+				<li><a href="writefeedback">Give Feedback</a></li>
+				<li><a href="myfeedback">My Feedbacks</a></li>
+			</ul>
+		</nav>
+
+		<!-- Banner -->
+		<section id="banner" class="major">
+			<div class="inner">
+				<header class="major">
+					<h1>Build your dream PC</h1>
+					<h2>Welcome, {{current_user.custName}}</h2>
 				</header>
+				<div class="content">
+					<p>To further information, contact us</p>
+					<ul class="actions">
+						<li><a href="contact" class="button next scrolly">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
 
-				<!-- Menu -->
-				<nav id="menu">
-					<ul class="links">
-						
-						<li> <a href="logout">Logout </a> </li>
-		                <li class="active"> <a href="home">Home </a> </li>
-						
-		                <li> <a href="about">About Us</a> </li>
+		<!-- Main -->
+		<div id="main">
 
-		                <li><a href="contact">Contact Us</a></li>
 
-		                <li class="dropdown">
-		                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">PC Builder</a>
-		                    
-		                    <ul class="dropdown-menu">
-		                        <li> <a href="productself1">Self Build In</a> </li>
-				                <li><a href="question">Recommend For You</a></li>
-		                    </ul>
-                        
-		                </li>
-                        <li><a href="writefeedback">Give Feedback</a></li>
-						<li><a href="myfeedback">My Feedbacks</a></li>
-            		</ul>
-				</nav>
-
-				<!-- Banner -->
-					<section id="banner" class="major">
-						<div class="inner">
-							<header class="major">
-								<h1>Build your dream PC</h1>
-								<h2>Welcome, {{current_user.custName}}</h2>
-							</header>
-							<div class="content">
-								<p>To further information, contact us</p>
-								<ul class="actions">
-									<li><a href="contact" class="button next scrolly">Contact Us</a></li>
-								</ul>
-							</div>
-						</div>
-					</section>
-
-				<!-- Main -->
-				<div id="main">
-					
-					
-					<!-- About us -->
-					<section>
-						<div class="inner">
-							<header class="major">
-								<h2>About us </h2>
-							</header>
-							<p>Palam Technology is a company that provides computer building, repairing, and maintaining services</p>
-						<ul class="actions">
-								<li><a href="about" class="button next">Read more</a></li>
-							</ul>
-						</div>
-					</section>
-					<h1> Welcome  </h1>
-					<!-- Featured Products -->
-							<section class="tiles">
-								<article>
-									<span class="image">
-										<img src="{{ url_for('static' , filename='images/product-1-720x480.jpg') }}" alt="" />
-										
-									</span>
-									<header class="major">
-										<h3>Self PC Build</h3>
-
-										<!-- <p><del>$99.00 </del> <strong>$79.00</strong></p> -->
-
-										<p>Customize your own PC by selecting parts </p>
-
-										<div class="major-actions">
-											<a href="/productself1" class="button small next">Let's get started</a>
-										</div>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-									
-										<img src="{{ url_for('static' , filename='images/product-2-720x480.jpg') }}" alt="" />
-									</span>
-									<header class="major">
-										<h3>Recommend For You</h3>
-
-										<!-- <p><del>$199.00</del> <strong>$179.00</strong></p> -->
-
-										<p>Don't know to choose your build up? Let's us recommend your suitable built up based on your preferences.</p>
-
-										<div class="major-actions">
-											<a href="/question" class="button small next">View Product</a>
-										</div>
-									</header>
-								</article>
-								
-							</section>
-
-					<!-- Testimonials -->
-					<section>
-						<div class="inner">
-							<header class="major">
-								<h2>Testimonials</h2>
-							</header>
-							<div class="row">
-								<div class="col-6">
-									<p><em>"Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt."</em></p>
-									<p><strong>- John Doe</strong></p>
-									
-								</div>
-
-								<div class="col-6">
-									<p><em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores temporibus dolorum minus repudiandae, eaque error corporis aliquam, architecto amet itaque nobis. Omnis itaque est dolore, a nostrum numquam. Quae, facilis."</em></p>
-									<p><strong>- Jack Smith</strong></p>
-								</div>
-							</div>
-							<ul class="actions">
-								<li><a href="testimonials.html" class="button next">Read more</a></li>
-							</ul>
-						</div>
-					</section>
-
-					<!-- Blog Posts -->
-					<section class="tiles">
-						<article>
-							<span class="image">
-								
-								<img src="{{ url_for('static' , filename='images/blog-1-720x480.jpg') }}" alt="" />
-							</span>
-							<header class="major">
-								<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit hic</h3>
-
-								<p><br> <span>John Doe</span> | <span>12/06/2020 10:30 </span> | <span>114</span></p>
-
-								<div class="major-actions">
-									<a href="blog-details.html" class="button small next scrolly">Read Blog</a>
-								</div>
-							</header>
-						</article>
-						<article>
-							<span class="image">
-								<img src="images/blog-2-720x480.jpg" alt="" />
-							</span>
-							<header class="major">
-								<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit hic</h3>
-
-								<p><br> <span>John Doe</span> | <span>12/06/2020 10:30 </span> | <span>114</span></p>
-
-								<div class="major-actions">
-									<a href="blog-details.html" class="button small next scrolly">Read Blog</a>
-								</div>
-							</header>
-						</article>
-						<article>
-							<span class="image">
-								<img src="images/blog-3-720x480.jpg" alt="" />
-							</span>
-							<header class="major">
-								<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit hic</h3>
-
-								<p><br> <span>John Doe</span> | <span>12/06/2020 10:30 </span> | <span>114</span></p>
-
-								<div class="major-actions">
-									<a href="blog-details.html" class="button small next scrolly">Read Blog</a>
-								</div>
-							</header>
-						</article>
-					</section>
+			<!-- About us -->
+			<section>
+				<div class="inner">
+					<header class="major">
+						<h2>About us </h2>
+					</header>
+					<p>Palam Technology is a company that provides computer building, repairing, and maintaining
+						services</p>
+					<ul class="actions">
+						<li><a href="about" class="button next">Read more</a></li>
+					</ul>
 				</div>
 
-				<!-- Footer -->
-				<footer id="footer">
-					<div class="inner">
-						<ul class="icons">
-							<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						</ul>
-						<ul class="copyright">
-							<li>Copyright © 2020 Company Name - Template by:</li>
-							<li> <a href="https://www.phpjabbers.com/">PHPJabbers.com</a></li>
-						</ul>
-					</div>
-				</footer>
 
-			</div>
+				<section class="tiles" style="padding-left: 10%">
+
+					<article>
+						<span class="image">
+
+							<img src="{{ url_for('static' , filename='images/product-2-720x480.jpg') }}" alt="" />
+						</span>
+						<header class="major">
+							<h3>Recommend For You</h3>
+							<p>Don't know to choose your build up? Let's us recommend your suitable built up based on
+								your preferences.</p>
+
+							<div class="major-actions">
+								<a href="/question" class="button small next">Start Recommending</a>
+							</div>
+						</header>
+					</article>
+
+				</section>
+			</section>
+
+			<!-- Featured Products -->
+
+
+
+			<!-- Testimonials -->
+			<section>
+				<div class="inner">
+					<header class="major">
+						<h2>Give Feedback</h2>
+					</header>
+					<div class="row">
+						<div class="col-6">
+							<p><em>Do you any feedback about the system? Give us your feedbacks!</em></p>
+
+
+						</div>
+
+
+					</div>
+					<ul class="actions">
+						<li><a href="writefeedback" class="button next">Send Feedback to Us</a></li>
+					</ul>
+				</div>
+			</section>
+
+
+			<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>Copyright © 2020 Company Name - Template by:</li>
+						<li> <a href="https://www.phpjabbers.com/">PHPJabbers.com</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		</div>
 
 		<!-- Scripts -->
-			<script src="{{ url_for('static' , filename='js/jquery.min.js') }}"></script>
-			<script src="{{ url_for('static' , filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-			<script src="{{ url_for('static' , filename='js/jquery.scrolly.min.js') }}"></script>
-			<script src="{{ url_for('static' , filename='js/jquery.scrollex.min.js') }}"></script>
-			<script src="{{ url_for('static' , filename='js/browser.min.js') }}"></script>
-			<script src="{{ url_for('static' , filename='js/breakpoints.min.js') }}"></script>
-			<script src="{{ url_for('static' , filename='js/util.js') }}"></script>
-			<script src="{{ url_for('static' , filename='js/main.js') }}"></script>
+		<script src="{{ url_for('static' , filename='js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static' , filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+		<script src="{{ url_for('static' , filename='js/jquery.scrolly.min.js') }}"></script>
+		<script src="{{ url_for('static' , filename='js/jquery.scrollex.min.js') }}"></script>
+		<script src="{{ url_for('static' , filename='js/browser.min.js') }}"></script>
+		<script src="{{ url_for('static' , filename='js/breakpoints.min.js') }}"></script>
+		<script src="{{ url_for('static' , filename='js/util.js') }}"></script>
+		<script src="{{ url_for('static' , filename='js/main.js') }}"></script>
 
 
-		
-	</body>
+
+</body>
 
 </html>

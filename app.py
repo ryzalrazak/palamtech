@@ -192,16 +192,6 @@ class Cpu(db.Model):
         self.brand = brand
         self.price = price
 
-# class Category(db.Model):
-#     # category = 'parents'
-#     catID = db.Column(db.Integer, primary_key=True)
-#     catName = db.Column(db.String(255))
-#     component = db.relationship('Component', backref='category', lazy=True)
-
-#     def __init__(self,catName):
-#         self.catName = catName
-
-
 class Pcpackage(db.Model):
     pcpackage = "children"
     id = db.Column(db.Integer, primary_key=True)
@@ -219,8 +209,11 @@ class Pcpackage(db.Model):
                     nullable=False)
     cpu = db.Column(db.Integer, db.ForeignKey("gpu.id"),
                     nullable=False)
+    reason = db.Column(db.String(255))
+    color = db.Column(db.String(255))
+    performance = db.Column(db.String(255))
 
-    def __init__(self, casing, mb, gpu, ram, ssd, psu, cpu):
+    def __init__(self, casing, mb, gpu, ram, ssd, psu, cpu,reason,color,performance):
 
         self.casing = casing
         self.mb = mb
@@ -229,6 +222,10 @@ class Pcpackage(db.Model):
         self.ssd = ssd
         self.psu = psu
         self.cpu = cpu
+        self.reason = reason
+        self.color = color
+        self.performance = performance
+
 
 
 # end of models
@@ -552,12 +549,12 @@ def addpackage():
     rstorage = db.engine.execute("SELECT id, name FROM ssd ORDER BY name")
     rpsu = db.engine.execute("SELECT id, name FROM psu ORDER BY name")
     rcpu = db.engine.execute("SELECT id, name FROM cpu ORDER BY name")
-    result = db.engine.execute("SELECT pcpackage.id, casing.name, mb.name,gpu.name,ram.name,ssd.name,psu.name,cpu.name,(casing.price+mb.price+gpu.price+ram.price+ssd.price+psu.price+cpu.price) FROM pcpackage JOIN casing ON (pcpackage.casing=casing.id) JOIN mb ON (pcpackage.mb=mb.id) JOIN gpu ON (pcpackage.gpu = gpu.id) JOIN ram ON (pcpackage.ram=ram.id) JOIN ssd ON (pcpackage.ssd=ssd.id) JOIN psu ON (pcpackage.psu=psu.id) JOIN cpu ON (pcpackage.cpu=cpu.id) ORDER BY id DESC")
+    result = db.engine.execute("SELECT pcpackage.id, casing.name, mb.name,gpu.name,ram.name,ssd.name,psu.name,cpu.name,(casing.price+mb.price+gpu.price+ram.price+ssd.price+psu.price+cpu.price),pcpackage.reason,pcpackage.color,pcpackage.performance FROM pcpackage JOIN casing ON (pcpackage.casing=casing.id) JOIN mb ON (pcpackage.mb=mb.id) JOIN gpu ON (pcpackage.gpu = gpu.id) JOIN ram ON (pcpackage.ram=ram.id) JOIN ssd ON (pcpackage.ssd=ssd.id) JOIN psu ON (pcpackage.psu=psu.id) JOIN cpu ON (pcpackage.cpu=cpu.id) ORDER BY id DESC")
 
     if request.method == 'POST':
 
         db.session.add(Pcpackage(casing=request.form['casing'], mb=request.form['mb'], gpu=request.form['gpu'],
-                       ram=request.form['ram'], ssd=request.form['ssd'], psu=request.form['psu'], cpu=request.form['cpu']))
+                       ram=request.form['ram'], ssd=request.form['ssd'], psu=request.form['psu'], cpu=request.form['cpu'],reason=request.form.getlist('reason')[0],color=request.form['color'],performance=request.form.getlist('performance')[0]))
         db.session.commit()
         return redirect('/addpackage')
 

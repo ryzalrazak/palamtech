@@ -134,15 +134,56 @@
                                                 </select>
                                                 
                                             <br>
-                                            
+                                            <label for="cpu">PC types</label>
+                                            <input type="checkbox" name="reason" value="Gaming" /> Gaming <br>
+									        <input type="checkbox" name="reason" value="Streaming" /> Streaming<br>
+									        <input type="checkbox" name="reason" value="Editing" /> Editing <br>
+									        <input type="checkbox" name="reason" value="Office Use" /> Office Use
                      
+                                            <label for="name">Color of PC</label>
+                                            <input type="radio" name="color" value ="any" /> Don't mind <br>
+                                            <input type="radio" name="color" value ="Black" /> Black<br>
+                                            <input type="radio" name="color" value ="White" /> White <br>
+
+                                            <label for="name">PC's performance?</label>
+									        <input type="checkbox" name="performance" value="Large memory" /> Large in memory storage <br>
+								        	<input type="checkbox" name="performance" value="Fast render"  /> Fast rendering performance<br>
+									        <input type="checkbox" name="performance" value="Smooth gaming" /> Smooth gaming experience <br>
+                                            <input type="checkbox" name="performance" value="Office" /> Just office use<br>
                                             <div >
+
+
+                                            
                                                 <br>
                                                 <ul class="actions">
                                                     <br>
-                                                    <li><input type="submit" value="Add Package" class="primary" /></li>
+                                                    <li><input type="submit" value="Add Package" class="primary" id="submit" /></li>
                                                 </ul>
                                             </div>
+                                            <!-- <script>
+                                                $(document).ready(function(){
+                                                    $('#submit').click(function(){
+                                                    var insert = [];
+                                                    $('.reason').each(function() {
+                                                        if($(this).is(":checked"))  {
+                                                            insert.push($(this).val());
+                                                        }
+                                                    });
+                                                    insert = insert.toString();
+                                                    var insert_string = 'checkboxvalue'+insert;
+                                                    $.ajax({
+                                                        method: "POST",
+                                                        url:"/addpackage",
+                                                        data: insert_string,
+                                                        cache: false,
+                                                        success: function(data){
+                                                            $("#result").html(data);
+                                                        }
+
+                                                    });
+                                                });
+                                            });
+                                            </script> -->
                                         </div>
                                     </form>
                                 </section>
@@ -169,6 +210,9 @@
                                                 <th>Power Supply Unit (PSU)</th>
                                                 <th>Central Processing Unit (CPU)</th>
                                                 <th>Price (RM)</th>
+                                                <th>Reason to buy</th>
+                                                <th>Color</th>
+                                                <th>Performance Category (RM)</th>
                                                 <th>Action</th>
         
                                             {% for row in package %}
@@ -183,6 +227,9 @@
                                                 <td>{{row.6}}</td>
                                                 <td>{{row.7}}</td>
                                                 <td>{{row.8}}</td>
+                                                <td>{{row.9}}</td>
+                                                <td>{{row.10}}</td>
+                                                <td>{{row.11}}</td>
                                                 <td><a href="/updatepackage/{{row.id}}">Update <br> <a
                                                     href="/deletepackage/{{row.id}}">Delete </td>
                                                 
@@ -191,34 +238,7 @@
                                         </table>  
                                             
                                         </section>
-                                <!-- <section class="split">
-                                    <section>
-                                        <div class="contact-method">
-                                            <span class="icon alt fa-envelope"></span>
-                                            <h3>Email</h3>
-                                            <a href="#">contact@company.com</a>
-                                        </div>
-                                    </section>
-                                    <section>
-                                        <div class="contact-method">
-                                            <span class="icon alt fa-phone"></span>
-                                            <h3>Phone</h3>
-                                            <span>+1 333 4040 5566</span>
-                                            <br>
-                                            <span>+1 333 5550 3366</span>
-                                        </div>
-                                    </section>
-                                    <section>
-                                        <div class="contact-method">
-                                            <span class="icon alt fa-home"></span>
-                                            <h3>Address</h3>
-                                            <span>212 Barrington Court <br> New York, ABC 10001 <br> United States of America</span>
-                                        </div>
-                                    </section>
-                                </section>
-                            </div>
-                        </section> -->
-
+                               
 				<!-- Footer -->
 				<footer id="footer">
 					<div class="inner">

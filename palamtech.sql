@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2022 at 06:01 PM
+-- Generation Time: Jun 13, 2022 at 06:11 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -229,28 +229,31 @@ CREATE TABLE `pcpackage` (
   `ram` int(11) NOT NULL,
   `ssd` int(11) NOT NULL,
   `psu` int(11) NOT NULL,
-  `cpu` int(11) NOT NULL
+  `cpu` int(11) NOT NULL,
+  `reason` varchar(255) NOT NULL,
+  `color` varchar(255) NOT NULL,
+  `performance` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pcpackage`
 --
 
-INSERT INTO `pcpackage` (`id`, `casing`, `mb`, `gpu`, `ram`, `ssd`, `psu`, `cpu`) VALUES
-(11, 1, 14, 9, 5, 7, 8, 13),
-(12, 1, 8, 10, 6, 8, 8, 2),
-(13, 10, 15, 11, 7, 8, 9, 15),
-(14, 1, 14, 12, 5, 7, 8, 13),
-(15, 1, 21, 10, 6, 8, 10, 2),
-(16, 10, 15, 13, 7, 8, 9, 15),
-(17, 11, 21, 10, 6, 8, 10, 14),
-(18, 12, 16, 15, 5, 7, 11, 7),
-(19, 1, 21, 6, 4, 1, 8, 2),
-(20, 10, 15, 6, 7, 8, 9, 15),
-(21, 15, 17, 18, 2, 3, 15, 10),
-(22, 9, 6, 18, 2, 3, 15, 6),
-(23, 9, 13, 15, 6, 3, 6, 12),
-(24, 12, 8, 3, 4, 8, 9, 9);
+INSERT INTO `pcpackage` (`id`, `casing`, `mb`, `gpu`, `ram`, `ssd`, `psu`, `cpu`, `reason`, `color`, `performance`) VALUES
+(11, 1, 14, 9, 5, 7, 8, 13, 'Gaming,Streaming', 'Black', 'Smooth gaming '),
+(12, 1, 8, 10, 6, 8, 8, 2, 'Gaming,Streaming', 'Black', 'Smooth gaming,Fast render'),
+(13, 10, 15, 11, 7, 8, 9, 15, 'Office Use', 'Black', 'Office'),
+(14, 1, 14, 12, 5, 7, 8, 13, 'Gaming,Streaming', 'Black', 'Smooth gaming,Fast render'),
+(15, 1, 21, 10, 6, 8, 10, 2, 'Gaming,Streaming', 'Black', 'Smooth gaming,Fast render'),
+(16, 10, 15, 13, 7, 8, 9, 15, 'Ofiice Use', 'Black', 'Office'),
+(17, 11, 21, 10, 6, 8, 10, 14, 'Gaming,Streaming', 'White', 'Smooth gaming,Fast render'),
+(18, 12, 16, 15, 5, 7, 11, 7, 'Gaming,Streaming', 'Black', 'Smooth gaming,Fast render'),
+(19, 1, 21, 6, 4, 1, 8, 2, 'Gaming,Office Use', 'Black', 'Office'),
+(20, 10, 15, 6, 7, 8, 9, 15, 'Office Use', 'Black', 'Office'),
+(21, 15, 17, 18, 2, 3, 15, 10, 'Gaming,Streaming,Editing', 'White', 'Large memory,Fast render,Smooth gaming'),
+(22, 9, 6, 18, 2, 3, 15, 6, 'Gaming,Streaming,Editing', 'White', 'Large memory,Fast render,Smooth gaming'),
+(23, 9, 13, 15, 6, 3, 6, 12, 'Gaming,Streaming,Editing', 'White', 'Large memory,Fast render,Smooth gaming'),
+(24, 12, 8, 3, 4, 8, 9, 9, 'Office Use', 'Black', 'Office');
 
 -- --------------------------------------------------------
 
@@ -499,7 +502,7 @@ ALTER TABLE `mb`
 -- AUTO_INCREMENT for table `pcpackage`
 --
 ALTER TABLE `pcpackage`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `psu`
